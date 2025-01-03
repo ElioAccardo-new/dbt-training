@@ -7,15 +7,10 @@ sources:
     tables:
       - name: customer
       - name: orders
+        columns:
+          - name: orderid
+            tests:
+              - unique
+              - not_null
       - name: product
-        # Data check
-        ## columns:
-        ##   - name: loaded_at_field    
-        ## freshness:
-        ##   warn_after:
-        ##     count: 12
-        ##     period: hour
-        ##   error_after:
-        ##     count: 24
-        ##     period: hour
           

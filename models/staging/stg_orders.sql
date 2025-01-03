@@ -16,7 +16,9 @@ SELECT
        p.category,
        p.productid,
        p.productname,
-       p.subcategory 
+       p.subcategory,
+-- from macro
+      {{ markup() }} AS markup
 from {{ ref('raw_orders') }} o
 left join {{ ref('raw_customer') }} c 
     on o.customerid=c.customerid

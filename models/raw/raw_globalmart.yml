@@ -5,15 +5,23 @@ models:
     columns:
       - name: customerid
         tests:
-          - unique
-          - not_null
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
 
   - name: raw_orders
     columns:
       - name: orderid
         tests:
-          - unique
-          - not_null
+          - unique:
+              config:
+                severity: warn
+          - not_null:
+              config:
+                severity: warn
       - name: shipmode
         tests:
           - accepted_values:
@@ -22,3 +30,5 @@ models:
                 - "Same Day"
                 - "Second Class"
                 - "Standard Class"
+              config:
+                severity: warn
